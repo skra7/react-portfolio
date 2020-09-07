@@ -54,9 +54,14 @@ header .banner {
    width: 85%;
    padding-bottom: 30px;
    text-align: center;
+   box-sizing: border-box;
+   background-color: rgba(0,0,0,0.6);
+   border-radius: 2em;
 }
 
-header .banner-text { width: 100%; }
+header .banner-text { width: 100%; 
+   
+}
 header .banner-text h1 {
    font: 90px/1.1em 'opensans-bold', sans-serif;
    color: #fff;
@@ -298,13 +303,13 @@ ul#nav li.current a { color: #F06000; }
 .bars li {
    position: relative;
   	margin-bottom: 60px;
-  	background: #ccc;
+     background: #B9B8D3;
   	height: 42px;
   	border-radius: 3px;
 }
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
-   color: #313131;
+   color: #4AC959;
 	text-transform: uppercase;
    letter-spacing: 2px;
 	font-weight: normal;
@@ -318,7 +323,7 @@ ul#nav li.current a { color: #F06000; }
 
    margin: 0;
    padding-right: 24px;
-  	background: #313131;
+  	background: #759FBC;
    display: inline-block;
   	height: 42px;
    line-height: 42px;
@@ -417,7 +422,7 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #portfolio {
-   background: #ebeeee;
+   background: #ebeeee  url(../images/background-work.jpg) no-repeat center center;
    padding-top: 90px;
    padding-bottom: 60px;
 }
@@ -498,7 +503,12 @@ ul#nav li.current a { color: #F06000; }
    margin-top: -15px;
 }
 .portfolio-item .item-wrap img {
-   vertical-align: bottom;
+   vertical-align: center;
+   width: 100% !important;
+  height: 150px !important;
+  max-height: 200px !important;
+  object-fit: contain !important;
+  margin-bottom: 10px !important;
 }
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {

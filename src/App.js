@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
 import $ from 'jquery';
 import './App.css';
 import Header from './Components/Header';
@@ -9,6 +8,9 @@ import Resume from './Components/Resume';
 import Contact from './Components/Contact';
 import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 
 class App extends Component {
 
@@ -20,6 +22,17 @@ class App extends Component {
     };
 
   }
+
+  exportPdf = () => {
+    html2canvas(document.querySelector(".App")).then(canvas => {
+      // document.body.appendChild(canvas);  // if you want see your screenshot in body.
+       const imgData = canvas.toDataURL('images/png');
+       const pdf = new jsPDF();
+       pdf.addImage(imgData, 'PNG', 0, 0);
+       pdf.save("download.pdf"); 
+   });
+
+}
 
   getResumeData(){
     $.ajax({
@@ -44,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
+        <About data={this.state.resumeData.main} pdfFunction={this.exportPdf}/>
         <Resume data={this.state.resumeData.resume}/>
         <Portfolio data={this.state.resumeData.portfolio}/>
         <Testimonials data={this.state.resumeData.testimonials}/>
