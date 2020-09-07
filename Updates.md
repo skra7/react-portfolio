@@ -1,4 +1,4 @@
-## Enhancements Done to the existing App
+## Enhancements Done to the existing App  (v1)
 
 -- All text and links changed
 
@@ -16,4 +16,4 @@
 
 -- Work background image changes.
 
--- Copyright footer changes
+-- Copyright footer changes.
